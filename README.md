@@ -20,6 +20,17 @@ bio19<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio19_studyarea_ext.ti
 #stack the different raster file
 ras_current<-stack(c(bio1, bio2, bio4, bio6, bio8, bio9, bio12, bio14, bio15, bio19))
 ```
+
+We can create a spatial grid x y with cell centered coordinates. 
+The spatial grid is like a data frame with x long and y lat longitude derived from the center of each pixel and the value derived from all the raster layers
+```
+#spatial grid
+
+coord_r<-rasterToPoints(bioclim_sub, spatial = TRUE)
+map_pts<-data.frame(x = coordinates(coord_r)[,1], y=coordinates(coord_r)[,2], coord_r@data)
+
+```
+
 upload the excel file with longitude (x) and latitude (y) data. In this case present in column 9 and 10 respectively
 
 ```
