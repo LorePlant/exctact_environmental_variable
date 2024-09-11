@@ -26,7 +26,7 @@ The spatial grid is like a data frame with x long and y lat longitude derived fr
 ```
 #spatial grid
 
-coord_r<-rasterToPoints(bioclim_sub, spatial = TRUE)
+coord_r<-rasterToPoints(ras_current, spatial = TRUE)
 map_pts<-data.frame(x = coordinates(coord_r)[,1], y=coordinates(coord_r)[,2], coord_r@data)
 
 ```
