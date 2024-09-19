@@ -9,25 +9,33 @@ library("readxl")
 bio1<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio1_studyarea_ext.tif"))
 bio2<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio2_studyarea_ext.tif"))
 bio4<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio4_studyarea_ext.tif"))
+bio5<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio5_studyarea_ext.tif"))
 bio6<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio6_studyarea_ext.tif"))
 bio8<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio8_studyarea_ext.tif"))
 bio9<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio9_studyarea_ext.tif"))
+bio10<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio10_studyarea_ext.tif"))
+bio11<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio11_studyarea_ext.tif"))
 bio12<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio12masked_studyarea_ext.tif"))
 bio14<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio14_studyarea_ext.tif"))
 bio15<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio15_studyarea_ext.tif"))
+bio18<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio18_studyarea_ext.tif"))
 bio19<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio19_studyarea_ext.tif"))
-names(bio1) = 'BIO1'
-names(bio2) = 'BIO2'
-names(bio4) = 'BIO4'
-names(bio6) = 'BIO6'
-names(bio8) = 'BIO8'
-names(bio9) = 'BIO9'
-names(bio12) = 'BIO12'
-names(bio14) = 'BIO14'
-names(bio15) = 'BIO15'
-names(bio19) = 'BIO19'
+names(bio1) = 'bio1'
+names(bio2) = 'bio2'
+names(bio4) = 'bio4'
+names(bio5) = 'bio5'
+names(bio6) = 'bio6'
+names(bio8) = 'bio8'
+names(bio9) = 'bio9'
+names(bio10) = 'bio10'
+names(bio11) = 'bio11'
+names(bio12) = 'bio12'
+names(bio14) = 'bio14'
+names(bio15) = 'bio15'
+names(bio18) = 'bio18'
+names(bio19) = 'bio19'
 #stack the different raster file
-ras_current<-stack(c(bio1, bio2, bio4, bio6, bio8, bio9, bio12, bio14, bio15, bio19))
+ras_current<-stack(c(bio1, bio2, bio4, bio5, bio6, bio8, bio9, bio10, bio11, bio12, bio14, bio15, bio18, bio19))
 ```
 
 We can create a spatial grid x y with cell centered coordinates. 
@@ -43,11 +51,11 @@ map_pts<-data.frame(x = coordinates(coord_r)[,1], y=coordinates(coord_r)[,2], co
 upload the excel file with longitude (x) and latitude (y) data. In this case present in column 9 and 10 respectively
 
 ```
-locations = read_excel("Dataset_west_olive.xlsx")
+locations = read_excel("359_geo_info.xlsx")
 
 ## Extracting environmental values for each source population
 Env <- data.frame(extract(ras_current, locations[,9:10]))
-write.table(Env, "Current_clim")
+write.table(Env, "Current_clim_wise")
 
 ```
 
