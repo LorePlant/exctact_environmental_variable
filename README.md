@@ -6,20 +6,13 @@ In this example I'm going to exctract 10 different bioclimatic variable from CHE
 library(raster)
 library("readxl")
 
-bio1<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio1_studyarea_ext.tif"))
-bio2<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio2_studyarea_ext.tif"))
-bio4<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio4_studyarea_ext.tif"))
-bio5<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio5_studyarea_ext.tif"))
-bio6<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio6_studyarea_ext.tif"))
-bio8<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio8_studyarea_ext.tif"))
-bio9<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio9_studyarea_ext.tif"))
-bio10<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio10_studyarea_ext.tif"))
-bio11<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio11_studyarea_ext.tif"))
-bio12<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio12masked_studyarea_ext.tif"))
-bio14<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio14_studyarea_ext.tif"))
-bio15<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio15_studyarea_ext.tif"))
-bio18<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio18_studyarea_ext.tif"))
-bio19<- raster(paste("/lustre/rocchettil/biovar_studyarea/bio19_studyarea_ext.tif"))
+
+bio2<- raster(paste("/storage/replicated/cirad/projects/CLIMOLIVEMED/results/GenomicOffsets/Lorenzo/Current_biovariable/West_Med_raster/bio2_studyarea_ext.tif"))
+bio10<- raster(paste("/storage/replicated/cirad/projects/CLIMOLIVEMED/results/GenomicOffsets/Lorenzo/Current_biovariable/West_Med_raster/bio10_studyarea_ext.tif"))
+bio11<- raster(paste("/storage/replicated/cirad/projects/CLIMOLIVEMED/results/GenomicOffsets/Lorenzo/Current_biovariable/West_Med_raster/bio11_studyarea_ext.tif"))
+bio15<- raster(paste("/storage/replicated/cirad/projects/CLIMOLIVEMED/results/GenomicOffsets/Lorenzo/Current_biovariable/West_Med_raster/bio15_studyarea_ext.tif"))
+bio18<- raster(paste("/storage/replicated/cirad/projects/CLIMOLIVEMED/results/GenomicOffsets/Lorenzo/Current_biovariable/West_Med_raster/bio18_studyarea_ext.tif"))
+bio19<- raster(paste("/storage/replicated/cirad/projects/CLIMOLIVEMED/results/GenomicOffsets/Lorenzo/Current_biovariable/West_Med_raster/bio19_studyarea_ext.tif"))
 names(bio1) = 'bio1'
 names(bio2) = 'bio2'
 names(bio4) = 'bio4'
